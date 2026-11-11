@@ -6,7 +6,7 @@ React + Vite app for ApplyTrack.
 
 ```
 src/
-  api/          mock back-end (pages get all data from here)
+  api/          where pages get all data: httpApi.js calls the Express back-end, mockApi.js is the Sprint 1 mock
   components/   shared UI components (buttons, inputs, dialogs, cards...)
   constants/    shared lists: statuses, job types, event types, sort options...
   context/      theme and login state
