@@ -9,8 +9,8 @@
  * survive a reload. Demo account: alex.morgan@university.example / password123
  *
  * Every function is async and returns copies of the data, exactly like a real API would.
- * In Sprint 2 the bodies of these functions will be replaced with calls to our Express
- * back-end; pages that use `api.*` won't need to change.
+ * In Sprint 2 each function moves to httpApi.js, which calls our Express back-end instead;
+ * pages that use `api.*` won't need to change.
  */
 
 import { FINAL_STATUSES, getLabel, getStatus, JOB_TYPES } from '../constants'
