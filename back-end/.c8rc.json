@@ -1,0 +1,5 @@
+{
+  "all": true,
+  "include": ["app.js", "data/**/*.js", "middleware/**/*.js", "routes/**/*.js"],
+  "reporter": ["text", "html"]
+}
