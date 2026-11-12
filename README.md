@@ -57,33 +57,66 @@ We welcome contributions from team members and other students. Please read [CONT
 
 ## Building and Testing
 
-The front-end is a [React](https://react.dev) app built with [Vite](https://vite.dev). In Sprint 1 it runs on mock data (`front-end/public/mock-data/`), so no back-end or database is needed yet.
+The app has two parts:
+
+- `front-end/`: a [React](https://react.dev) app built with [Vite](https://vite.dev).
+- `back-end/`: an [Express.js](https://expressjs.com) server that the front-end gets its data from. In Sprint 2 it serves mock data kept in memory (no database yet), so changes reset when the server restarts.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org) **20.19 or newer** (check with `node -v`). If you use [nvm](https://github.com/nvm-sh/nvm), run `nvm use` inside `front-end/`.
+- [Node.js](https://nodejs.org) **20.19 or newer** (check with `node -v`). If you use [nvm](https://github.com/nvm-sh/nvm), run `nvm use` inside `front-end/` or `back-end/`.
 - [Git](https://git-scm.com)
 
 ### Setup
 
 ```bash
 git clone https://github.com/agile-students-fall2026/generic-mern-stack-project-applyTrack.git
-cd generic-mern-stack-project-applyTrack/front-end
+cd generic-mern-stack-project-applyTrack
+
+cd back-end
+npm install
+cp .env.example .env   # on Windows: copy .env.example .env
+
+cd ../front-end
 npm install
 ```
 
 ### Running the app locally
 
+Run the back-end and the front-end at the same time, in two terminals:
+
 ```bash
-cd front-end
-npm run dev
+# terminal 1
+cd back-end
+npm run dev      # http://localhost:3000, restarts when you save a file
 ```
 
-Open the address shown in the terminal (usually http://localhost:5173). The app is designed for phones; on a computer, use your browser's mobile view for the best experience.
+```bash
+# terminal 2
+cd front-end
+npm run dev      # http://localhost:5173
+```
 
-To look around, log in with the demo account **alex.morgan@university.example** / **password123**, or create your own account on the Sign Up screen. Accounts are stored only in your browser for now.
+Open http://localhost:5173. The front-end forwards API requests to the back-end for you. The app is designed for phones; on a computer, use your browser's mobile view for the best experience.
 
-Other commands (run inside `front-end/`):
+To look around, log in with the demo account **alex.morgan@university.example** / **password123**, or create your own account on the Sign Up screen.
+
+### Back-end commands
+
+Run inside `back-end/`:
+
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Starts the server and restarts it whenever you save a file |
+| `npm start` | Starts the server |
+| `npm test` | Runs the unit tests (mocha + chai) |
+| `npm run coverage` | Runs the tests and shows how much of the code they cover (c8) |
+
+See [back-end/README.md](back-end/README.md) for how the back-end is organized and how to add a route.
+
+### Front-end commands
+
+Run inside `front-end/`:
 
 | Command | What it does |
 | --- | --- |
